@@ -1,4 +1,4 @@
-# Resubmission Cover Note — Customer Support AI Agent
+#  Cover Note — Customer Support AI Agent
 
 This resubmission addresses the three issues raised in the previous review.
 
