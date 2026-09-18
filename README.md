@@ -153,4 +153,4 @@ Evaluation uses Amazon Bedrock Evaluations (LLM-as-a-judge) on a JSONL dataset g
 
 ## License
 
-MIT
+Udacity
