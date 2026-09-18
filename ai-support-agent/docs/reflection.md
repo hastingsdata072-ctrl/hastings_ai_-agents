@@ -1,4 +1,4 @@
-# Reflection — Customer Support AI Agent
+# Reflection — AI Support Agent
 
 ## Design decision: loyalty discount calculation
 
