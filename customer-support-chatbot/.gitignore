@@ -1,0 +1,34 @@
+# AWS credentials and secrets — never commit these
+.env
+*.env
+agentcore_config.json
+aws_credentials
+credentials
+
+# Generated output files
+output_eval_dataset.jsonl
+*.jsonl
+
+# macOS metadata
+.DS_Store
+**/.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+*.egg-info/
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
+
+# Course scaffolding — not part of the submission
+**/planning.md
+demo_guides/
+scripts/
+lesson-*/
