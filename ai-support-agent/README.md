@@ -1,4 +1,4 @@
-# Customer Support AI Agent
+# AI Support Agent
 ### Built with Amazon Bedrock AgentCore · Strands Agents · AWS Lambda · Amazon Nova 2 Lite
 
 A production-deployed AI agent that handles real customer support workflows end-to-end — tracking orders, processing refunds, answering product and policy questions, calculating loyalty discounts, and browsing live web pages. Built on Amazon Bedrock AgentCore with long-term cross-session memory, a managed code execution sandbox, and a tool gateway backed by AWS Lambda.
