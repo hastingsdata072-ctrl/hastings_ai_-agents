@@ -89,7 +89,12 @@ novamart-multi-agent-support/
 ├── .gitignore
 │
 ├── src/
-│   └── agent_orchestrator.py   # All 5 agents + WorkflowState + deploy pipeline
+│   ├── agent_orchestrator.py   # All 5 agents + WorkflowState + deploy pipeline
+│   ├── agent_utils.py          # Terminal trace UI utilities (colour, AgentTrace)
+│   ├── agent_observability.py  # X-Ray tracing + CloudWatch logging layer
+│   ├── bedrock_kb_retrieval.py # Knowledge Base retrieval helper
+│   ├── agentcore_cli.py        # AgentCore CLI wrapper (stage + deploy)
+│   └── demo.py                 # Demo script (3 hardcoded end-to-end scenarios)
 │
 ├── agentcore/
 │   ├── agentcore.json           # AgentCore CLI runtime definition
