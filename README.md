@@ -1,6 +1,6 @@
 # AI Agents — Amazon Bedrock Portfolio
 
-Two production-style AI agent projects built on Amazon Bedrock AgentCore, AWS Lambda, and the Strands Agents framework. Each project is self-contained with its own README, architecture diagram, source code, infrastructure, and test evidence.
+Three production-style AI agent projects built on Amazon Bedrock AgentCore, AWS Lambda, and the Strands Agents framework. Each project is self-contained with its own README, architecture diagram, source code, infrastructure, and test evidence.
 
 ---
 
@@ -20,21 +20,32 @@ A fully deployed AI support agent with order tracking, refund processing, loyalt
 
 ---
 
-## AWS services used across both projects
+### 3. [NovaMart Multi-Agent Support System](./novamart-multi-agent-support/)
+A production-grade multi-agent system that routes customer requests through a 5-agent hierarchy — inventory lookup, parallel multi-agent RAG across 3 knowledge bases, refund eligibility decisions, and response composition. Fully deployed on AgentCore Runtime with Bedrock Guardrails, AgentCore Memory, and end-to-end X-Ray observability. **120/120 on the automated test suite.**
+
+**Stack:** Strands Agents · Amazon Bedrock AgentCore · Claude Haiku 4.5 + Sonnet 4.5 · DynamoDB · Bedrock Knowledge Bases × 3 · Bedrock Guardrails · AgentCore Memory · AWS X-Ray · CloudWatch
+
+---
+
+## AWS services used across all projects
 
 | Service | Used in |
 |---|---|
-| Amazon Bedrock AgentCore (managed harness) | Both |
-| Amazon Nova Pro / Nova 2 Lite | Both |
-| AgentCore Gateway (MCP) | Both |
-| AWS Lambda | Both |
-| Amazon DynamoDB | Chatbot |
-| Amazon Bedrock Knowledge Base | AI Support Agent |
-| AgentCore Memory | AI Support Agent |
+| Amazon Bedrock AgentCore (managed harness / runtime) | All three |
+| Amazon Nova Pro / Nova 2 Lite | Chatbot, AI Support Agent |
+| Claude Haiku 4.5 / Sonnet 4.5 | NovaMart |
+| AgentCore Gateway (MCP) | Chatbot, AI Support Agent |
+| AWS Lambda | Chatbot, AI Support Agent |
+| Amazon DynamoDB | Chatbot, NovaMart |
+| Amazon Bedrock Knowledge Base | AI Support Agent, NovaMart |
+| AgentCore Memory | AI Support Agent, NovaMart |
 | AgentCore Code Interpreter | AI Support Agent |
 | AgentCore Browser | AI Support Agent |
+| Amazon Bedrock Guardrails | NovaMart |
+| AWS X-Ray | NovaMart |
+| Amazon CloudWatch Logs | NovaMart |
 | Amazon Bedrock Evaluations | Chatbot |
-| AWS CloudFormation | Both |
+| AWS CloudFormation | All three |
 
 ---
 
