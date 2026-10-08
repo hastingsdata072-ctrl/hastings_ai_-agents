@@ -217,7 +217,7 @@ Bedrock Guardrails are enforced on every `BedrockModel` invocation — not at th
 
 - `.env` is gitignored — never committed
 - `.env.example` contains only empty placeholders
-- No AWS credentials, ARNs, or resource IDs are hardcoded anywhere in the source
+- Configuration values (KB IDs, runtime ARNs, guardrail IDs) are loaded from environment variables at runtime via `config.py`
 - PII redaction (emails, phones anonymised; credit cards and SSNs blocked) enforced via Bedrock Guardrails
 
 ---

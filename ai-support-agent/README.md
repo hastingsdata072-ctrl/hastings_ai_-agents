@@ -52,7 +52,7 @@ See [architecture.md](./architecture.md) for full service roles and request flow
 | Agent framework | Strands Agents |
 | Model | Amazon Nova 2 Lite (`global.amazon.nova-2-lite-v1:0`) |
 | Tool gateway | AgentCore Gateway (MCP over streamable HTTP) |
-| Tool runtime | AWS Lambda (Python 3.14) |
+| Tool runtime | AWS Lambda (Python 3.12) |
 | Knowledge base | Amazon Bedrock Knowledge Base |
 | Code execution | AgentCore Code Interpreter |
 | Web browsing | AgentCore Browser |
@@ -64,10 +64,11 @@ See [architecture.md](./architecture.md) for full service roles and request flow
 ## Repository layout
 
 ```
-customer-support-ai-agent/
+ai-support-agent/
 ├── main.py                    # Agent entrypoint — all tools, hooks, and routing
 ├── architecture.md            # System diagram and service roles
 ├── pyproject.toml             # Dependencies (uv / pip)
+├── .env.example               # Environment variable template
 ├── LICENSE
 │
 ├── lambda/
@@ -95,6 +96,13 @@ customer-support-ai-agent/
 **Install dependencies**
 ```bash
 uv sync
+```
+
+**Configure environment**
+```bash
+cp .env.example .env
+# Fill in GATEWAY_URL, KB_ID, and MEMORY_ID with your deployed resource values
+# Never commit .env — it is gitignored
 ```
 
 **Run a single turn locally**

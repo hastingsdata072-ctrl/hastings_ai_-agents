@@ -51,4 +51,4 @@ A production-grade multi-agent system that routes customer requests through a 5-
 
 ## Security note
 
-No API keys, AWS credentials, resource ARNs, or environment-specific secrets are committed to this repository. All sensitive values are referenced by placeholder and must be supplied locally. See each project's `.gitignore` for exclusion rules.
+AWS credentials, API keys, and sensitive resource identifiers are kept out of source control. Each project includes a `.gitignore` that excludes `.env` files and generated artifacts. Configuration values are loaded from environment variables at runtime. See each project's `.env.example` for the required keys.

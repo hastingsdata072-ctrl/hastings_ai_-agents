@@ -1,4 +1,4 @@
-# Architecture — Customer Support AI Agent
+# Architecture — AI Support Agent
 
 ## System overview
 
