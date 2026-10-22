@@ -1,0 +1,16 @@
+# Streamlit secrets — never commit
+.streamlit/secrets.toml
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.env
+
+# AWS credentials
+*.crt
+.aws/
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,0 +1,12 @@
+{
+  "verdict": "CHANGES_REQUESTED",
+  "findings": [
+    "Nyeri sub-county list contains ward-level names — \"Kieni East\" and \"Kieni West\" are electoral wards, not administrative sub-counties. Nyeri has 6 official sub-counties: Tetu, Kieni, Mathira, Nyeri Town, Othaya, Mukurweini. Remove the two ward entries from KENYA_SUB_COUNTIES[\"Nyeri\"].",
+    "Kirinyaga sub-county list contains a non-existent entry — \"Kirinyaga East\" is not an official sub-county. The 4 official sub-counties are Mwea, Gichugu, Ndia, and Kirinyaga Central. Remove \"Kirinyaga East\" from KENYA_SUB_COUNTIES[\"Kirinyaga\"].",
+    "Chepalungu in Kericho sub-county list — Chepalungu sub-county is administered under Bomet County; it appears in Kericho's KENYA_SUB_COUNTIES list in addition to Bomet's. Verify against the current KNBS/IEBC administrative boundary list and remove the incorrect entry from whichever county it doesn't belong to.",
+    "Round-robin assignment produces misleading per-facility sub-county data — there is no runtime warning in the output CSV or in the clinic locator UI. Consider adding a visible disclaimer in the UI so users don't trust individual facility sub-county labels.",
+    "Laikipia will always show only Laikipia West in the clinic locator — only 1 OSM facility exists for Laikipia, so the round-robin never cycles to Laikipia East or Laikipia North. Source-data gap; no pipeline fix available without richer source data.",
+    "932 facilities default-classified as Public — any blank or unrecognised OSM operator tag becomes Public. A mapping of common OSM operator strings or a cross-reference against KMHFL ownership fields would reduce noise."
+  ],
+  "reviewDoc": "C:\\Users\\user\\Downloads\\PYTHON\\kenya-health-assistant\\data\\.agents\\code-review.md"
+}

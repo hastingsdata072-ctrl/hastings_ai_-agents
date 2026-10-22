@@ -1,0 +1,1 @@
+from .bedrock_client import ask_health_assistant
