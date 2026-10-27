@@ -27,6 +27,13 @@ A production-grade multi-agent system that routes customer requests through a 5-
 
 ---
 
+### 4. [Linda Afya Health Assistant](./linda-afya/)
+A bilingual (English/Kiswahili) AI health assistant aligned with Kenya Ministry of Health guidelines. Provides symptom triage (RED/YELLOW/GREEN decision matrix), clinic location across 13,000+ MoH facilities, immunization tracking against the Kenya KEPI schedule, and free-form AI health chat grounded in official MoH clinical documents.
+
+**Stack:** Streamlit · OpenRouter · NVIDIA Nemotron 3 Ultra 550B · pandas · Streamlit Community Cloud · Future: Amazon Bedrock AgentCore + Bedrock Knowledge Bases
+
+---
+
 ## AWS services used across all projects
 
 | Service | Used in |
