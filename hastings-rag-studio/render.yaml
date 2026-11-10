@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: hastings-rag-studio
+    runtime: python
+    region: oregon
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: streamlit run app.py --server.address 0.0.0.0 --server.port $PORT --server.fileWatcherType none --server.headless true
+    envVars:
+      - key: GROQ_API_KEY
+        sync: false
+      - key: GROQ_MODEL
+        value: openai/gpt-oss-120b
+      - key: DATABASE_URL
+        sync: false
+      - key: EMBEDDING_MODEL
+        value: all-MiniLM-L6-v2
+      - key: CHUNK_SIZE
+        value: "1000"
+      - key: CHUNK_OVERLAP
+        value: "150"
+      - key: TOP_K
+        value: "5"
