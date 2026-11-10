@@ -8,6 +8,8 @@ and making implicit terms explicit.
 
 from __future__ import annotations
 
+from groq import Groq
+
 from src.config import config
 
 
@@ -25,9 +27,6 @@ def rewrite_query(question: str, model: str | None = None) -> str:
     Returns:
         Rewritten query string (or original if rewriting fails).
     """
-    from groq import Groq
-    from src.config import config as cfg
-
     prompt = f"""You are a search query optimizer for a document retrieval system.
 
 Rewrite the following question into a better search query that will find relevant passages in documents.
@@ -44,9 +43,9 @@ Original question: {question}
 Rewritten query:"""
 
     try:
-        client = Groq(api_key=cfg.groq_api_key)
+        client = Groq(api_key=config.groq_api_key)
         response = client.chat.completions.create(
-            model=model or cfg.groq_model,
+            model=model or config.groq_model,
             messages=[{"role": "user", "content": prompt}],
             temperature=0.3,
             max_tokens=100,

@@ -6,8 +6,8 @@
 
 set -euo pipefail
 
-AWS_ACCOUNT="755370915486"
-AWS_REGION="us-east-1"
+AWS_ACCOUNT="${AWS_ACCOUNT:-$(aws sts get-caller-identity --query Account --output text)}"
+AWS_REGION="${AWS_REGION:-us-east-1}"
 APP_NAME="hastings-rag-studio"
 DB_INSTANCE="hastings-rag-db"
 S3_BUCKET="${APP_NAME}-documents-${AWS_ACCOUNT}"

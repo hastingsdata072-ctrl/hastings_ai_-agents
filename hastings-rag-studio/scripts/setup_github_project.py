@@ -15,7 +15,6 @@ import os
 TOKEN = os.environ.get("GITHUB_TOKEN", "")
 OWNER = "hastingsdata072-ctrl"
 REPO = "hastings-rag-studio"
-REPO2 = "hastings_ai_-agents"
 
 HEADERS = {
     "Authorization": f"Bearer {TOKEN}",

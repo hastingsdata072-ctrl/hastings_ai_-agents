@@ -16,8 +16,9 @@
 set -euo pipefail
 
 # ── Configuration ─────────────────────────────────────────────────────────────
-AWS_ACCOUNT="755370915486"
-AWS_REGION="us-east-1"
+# Set AWS_ACCOUNT to your 12-digit AWS account ID before running
+AWS_ACCOUNT="${AWS_ACCOUNT:-$(aws sts get-caller-identity --query Account --output text)}"
+AWS_REGION="${AWS_REGION:-us-east-1}"
 APP_NAME="hastings-rag-studio"
 ECR_REPO="${APP_NAME}"
 IMAGE_TAG="latest"
@@ -129,9 +130,9 @@ echo "  ✅ RDS endpoint: ${DB_ENDPOINT}"
 echo ""
 echo "▶ Step 5/7: Storing secrets in Secrets Manager…"
 
-# Read GROQ_API_KEY from local .env
-GROQ_API_KEY=$(grep GROQ_API_KEY /mnt/c/Users/user/Downloads/Hastings\ studion/hastings-rag-studio/.env | cut -d'=' -f2)
-GROQ_MODEL=$(grep GROQ_MODEL /mnt/c/Users/user/Downloads/Hastings\ studion/hastings-rag-studio/.env | cut -d'=' -f2)
+# Read GROQ_API_KEY from local .env (project root)
+GROQ_API_KEY=$(grep GROQ_API_KEY .env | cut -d'=' -f2)
+GROQ_MODEL=$(grep GROQ_MODEL .env | cut -d'=' -f2)
 
 DATABASE_URL="postgresql://${DB_USER}:${DB_PASSWORD}@${DB_ENDPOINT}:5432/${DB_NAME}"
 

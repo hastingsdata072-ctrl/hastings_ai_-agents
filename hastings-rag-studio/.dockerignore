@@ -1,13 +1,38 @@
+# Secrets — never bake into image
 .env
+.env.*
+
+# Local dev environment
 venv/
 .venv/
+
+# Python bytecode
 __pycache__/
 *.pyc
 *.pyo
+
+# Test artifacts
 .pytest_cache/
+tests/
+
+# Local data and uploads
 assets/uploads/
 *.db
 *.sqlite
+
+# Version control and CI
 .git/
 .gitignore
+.github/
+
+# Deployment scripts (not needed inside the image)
+deploy/
+
+# Dev/setup scripts (not needed inside the image)
+scripts/setup_github_project.py
+scripts/link_project_to_repo.py
+push_update.sh
+
+# Docs (not needed at runtime)
 README.md
+CONTRIBUTING.md
