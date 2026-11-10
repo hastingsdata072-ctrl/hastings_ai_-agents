@@ -1,6 +1,6 @@
-# AI Agents — Amazon Bedrock Portfolio
+# AI Agents & Intelligence Portfolio
 
-Three production-style AI agent projects built on Amazon Bedrock AgentCore, AWS Lambda, and the Strands Agents framework. Each project is self-contained with its own README, architecture diagram, source code, infrastructure, and test evidence.
+Five production-style AI and ML projects spanning Amazon Bedrock AgentCore, multi-agent orchestration, RAG, and document intelligence. Each project is self-contained with its own README, architecture diagram, source code, infrastructure, and test evidence.
 
 ---
 
@@ -27,32 +27,39 @@ A production-grade multi-agent system that routes customer requests through a 5-
 
 ---
 
-### 4. [Linda Afya Health Assistant](./linda-afya/)
+### 4. [Hastings RAG Studio](./hastings-rag-studio/)
+A professional Document Intelligence and Agentic RAG platform. Upload documents, ask questions, and receive evidence-grounded answers with full citations. Features a full advanced RAG pipeline: hybrid vector + BM25 retrieval with RRF fusion, cross-encoder reranking, query rewriting, context compression, citation verification, persistent chat history, and an evaluation dashboard.
+
+**Stack:** Python 3.11 · Streamlit · Groq API (GPT OSS 120B / Llama 3.x) · PostgreSQL + pgvector (HNSW) · sentence-transformers · rank-bm25 · Docker · Render + Neon · WSL 2 (Ubuntu)
+
+---
+
+### 5. [Linda Afya Health Assistant](./linda-afya/)
 A bilingual (English/Kiswahili) AI health assistant aligned with Kenya Ministry of Health guidelines. Provides symptom triage (RED/YELLOW/GREEN decision matrix), clinic location across 13,000+ MoH facilities, immunization tracking against the Kenya KEPI schedule, and free-form AI health chat grounded in official MoH clinical documents.
 
 **Stack:** Streamlit · OpenRouter · NVIDIA Nemotron 3 Ultra 550B · pandas · Streamlit Community Cloud · Future: Amazon Bedrock AgentCore + Bedrock Knowledge Bases
 
 ---
 
-## AWS services used across all projects
+## AWS services used across projects
 
 | Service | Used in |
 |---|---|
-| Amazon Bedrock AgentCore (managed harness / runtime) | All three |
-| Amazon Nova Pro / Nova 2 Lite | Chatbot, AI Support Agent |
-| Claude Haiku 4.5 / Sonnet 4.5 | NovaMart |
-| AgentCore Gateway (MCP) | Chatbot, AI Support Agent |
-| AWS Lambda | Chatbot, AI Support Agent |
-| Amazon DynamoDB | Chatbot, NovaMart |
-| Amazon Bedrock Knowledge Base | AI Support Agent, NovaMart |
-| AgentCore Memory | AI Support Agent, NovaMart |
-| AgentCore Code Interpreter | AI Support Agent |
-| AgentCore Browser | AI Support Agent |
-| Amazon Bedrock Guardrails | NovaMart |
-| AWS X-Ray | NovaMart |
-| Amazon CloudWatch Logs | NovaMart |
-| Amazon Bedrock Evaluations | Chatbot |
-| AWS CloudFormation | All three |
+| Amazon Bedrock AgentCore (managed harness / runtime) | Projects 1, 2, 3 |
+| Amazon Nova Pro / Nova 2 Lite | Projects 1, 2 |
+| Claude Haiku 4.5 / Sonnet 4.5 | Project 3 |
+| AgentCore Gateway (MCP) | Projects 1, 2 |
+| AWS Lambda | Projects 1, 2 |
+| Amazon DynamoDB | Projects 1, 3 |
+| Amazon Bedrock Knowledge Base | Projects 2, 3 |
+| AgentCore Memory | Projects 2, 3 |
+| AgentCore Code Interpreter | Project 2 |
+| AgentCore Browser | Project 2 |
+| Amazon Bedrock Guardrails | Project 3 |
+| AWS X-Ray | Project 3 |
+| Amazon CloudWatch Logs | Project 3 |
+| Amazon Bedrock Evaluations | Project 1 |
+| AWS CloudFormation | Projects 1, 2, 3 |
 
 ---
 
