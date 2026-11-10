@@ -63,6 +63,29 @@ A bilingual (English/Kiswahili) AI health assistant aligned with Kenya Ministry 
 
 ---
 
+## Tech stack — Projects 4 & 5
+
+| Component | Hastings RAG Studio (Project 4) | Linda Afya (Project 5) |
+|---|---|---|
+| Language | Python 3.11 | Python 3.11 |
+| UI framework | Streamlit 1.45 | Streamlit 1.45 |
+| LLM / AI API | Groq API (GPT OSS 120B · Llama 3.3 70B · Llama 3.1 8B) | OpenRouter (NVIDIA Nemotron 3 Ultra 550B) |
+| Vector database | PostgreSQL 16 + pgvector (HNSW index, cosine similarity) | — |
+| Embeddings | sentence-transformers `all-MiniLM-L6-v2` (384d) | — |
+| Keyword search | rank-bm25 (BM25Okapi) | — |
+| Reranker | cross-encoder/ms-marco-MiniLM-L-6-v2 | — |
+| DB driver | psycopg v3 + psycopg-pool | — |
+| Data handling | — | pandas |
+| Maps | — | folium |
+| PDF extraction | PyMuPDF | — |
+| DOCX extraction | python-docx | — |
+| Config | python-dotenv | python-dotenv |
+| Containerisation | Docker (multi-stage build) | — |
+| Deployment | Render (free tier) + Neon (serverless pgvector) | Streamlit Community Cloud |
+| Dev environment | WSL 2 (Ubuntu) | WSL 2 (Ubuntu) |
+
+---
+
 ## Security note
 
 AWS credentials, API keys, and sensitive resource identifiers are kept out of source control. Each project includes a `.gitignore` that excludes `.env` files and generated artifacts. Configuration values are loaded from environment variables at runtime. See each project's `.env.example` for the required keys.
